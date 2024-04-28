@@ -6,9 +6,10 @@ import { FC } from "react"
 interface TransitionLinkProps {
     href: string
     children: React.ReactNode
+    useHover?: boolean
 }
 
-const TransitionLink: FC<TransitionLinkProps> = ({ href, children }) => {
+const TransitionLink: FC<TransitionLinkProps> = ({ href, children, useHover = true }) => {
     const router = useRouter();
     const pathname = usePathname();
 
@@ -19,7 +20,7 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, children }) => {
     }
 
     return (
-        <button className="text-white font-bold px-8 py-4 hover:text-black bg-black hover:bg-white flex items-center justify-center"
+        <button className={`text-white font-bold px-8 py-4 hover:text-black ${useHover ? "bg-black hover:bg-white" : ""} flex items-center justify-center`}
             onClick={handleClick}>
             {children}
         </button>

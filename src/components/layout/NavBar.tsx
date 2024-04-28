@@ -29,7 +29,7 @@ const NavBar: FC = () => {
     return (
         <div className='fixed flex justify-between items-center w-screen px-4 h-auto bg-black' >
             <div className='mx-auto lg:ml-8'>
-                <TransitionLink href='/' ><BrandLogo /></TransitionLink>
+                <TransitionLink href='/' useHover={false} ><BrandLogo /></TransitionLink>
             </div>
             <div>
                 <FaBars className='cursor-pointer lg:hidden' fill='white' onClick={() => {

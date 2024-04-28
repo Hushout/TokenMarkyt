@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function HomePage() {
+const HomePage:FC = () => {
   return (
-    <div className='bg-green-500 text-white'>HomePage</div>
+    <div>HomePage</div>
   )
 }
 

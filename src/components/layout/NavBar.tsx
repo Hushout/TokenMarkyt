@@ -6,11 +6,9 @@ import { FaBars } from 'react-icons/fa'
 import { SiMarketo } from "react-icons/si"
 import { GiWallet } from "react-icons/gi"
 import { FcAbout } from "react-icons/fc"
+import TransitionLink from './TransitionLink'
 
-interface NavBarProps {
-}
-
-const NavBar: FC<NavBarProps> = () => {
+const NavBar: FC = () => {
     const pages: { name: string; path: string; icon: IconType }[] = [
         { name: 'MARKET', path: '/market', icon: SiMarketo },
         { name: 'WALLET', path: '/wallet', icon: GiWallet },
@@ -19,23 +17,25 @@ const NavBar: FC<NavBarProps> = () => {
 
     const navLinks = pages.map((page, index) => {
         return (
-            <a key={index} href={page.path} className='text-white font-bold px-8 py-4 hover:text-black bg-black hover:bg-white flex items-center justify-center'>
-                    {<page.icon className='inline-block lg:hidden mr-5' />}
-                    {page.name}
-            </a>
+            <TransitionLink key={page.name} href={page.path}>
+                {<page.icon className='inline-block lg:hidden mr-5' />}
+                {page.name}
+            </TransitionLink>
         )
     })
 
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <div className='flex justify-between items-center w-screen px-8 h-auto' >
-            <a href='/' className='mx-auto lg:ml-8'><BrandLogo /></a>
+        <div className='fixed flex justify-between items-center w-screen px-4 h-auto bg-black' >
+            <div className='mx-auto lg:ml-8'>
+                <TransitionLink href='/' ><BrandLogo /></TransitionLink>
+            </div>
             <div>
-                <FaBars className='color-white cursor-pointer lg:hidden' onClick={() => {
+                <FaBars className='cursor-pointer lg:hidden' fill='white' onClick={() => {
                     setShowMenu(!showMenu);
                 }} />
-                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-20 lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+47px)]" : "translate-x-full"} lg:translate-x-0`}> 
+                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-[102px] lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+47px)]" : "translate-x-full"} lg:translate-x-0`}>
                     {navLinks}
                 </nav>
             </div>

@@ -1,3 +1,4 @@
+import BrandLogo from '@/svg/brand/BrandLogo';
 import React, { FC } from 'react'
 import { FaBars } from 'react-icons/fa'
 
@@ -19,7 +20,7 @@ const NavBar: FC<NavBarProps> = () => {
 
     return (
         <div className='flex justify-between items-center w-100% px-4 h-auto'>
-            <a href='/'>Brand</a>
+            <a href='/'><BrandLogo /></a>
             <div>
                 {/* <FaBars className='color-white cursor-pointer'/> */}
                 <nav role="navigation" className="flex">

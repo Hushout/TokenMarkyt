@@ -5,7 +5,7 @@ interface BrandLogoProps {
     width?: string
 }
 
-const BrandLogo: FC<BrandLogoProps> = ({ height = "100", width = "200" }) => {
+const BrandLogo: FC<BrandLogoProps> = ({ height = "70", width = "200" }) => {
     return (
         <div>
             <svg viewBox="0 0 90 10" height={height} width={width}>

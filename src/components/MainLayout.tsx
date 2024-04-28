@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import MainHeader from './MainHeader'
+import NavBar from './NavBar'
 
 interface MainLayoutProps {
     children: React.ReactNode
@@ -7,9 +7,8 @@ interface MainLayoutProps {
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
-        <div>
-            <MainHeader />
-            MainLayout
+        <div className='w-screen min-h-screen'>
+            <NavBar />
             {children}
         </div>
     )

@@ -2,7 +2,7 @@
 import { animationPageIn } from '@/utils/animations';
 import React, { FC, useEffect } from 'react'
 
-const Template: FC = () => {
+const Template: FC = ({children} : {children: React.ReactNode}) => {
     useEffect(() => {
         animationPageIn()
     }, [])
@@ -12,6 +12,7 @@ const Template: FC = () => {
             <div id="banner2" className="min-h-screen bg-neutral-950 z-10 fixed top-0 left-[25%] w-1/4"></div>
             <div id="banner3" className="min-h-screen bg-neutral-950 z-10 fixed top-0 left-[50%] w-1/4"></div>
             <div id="banner4" className="min-h-screen bg-neutral-950 z-10 fixed top-0 left-[75%] w-1/4"></div>
+            {children}
         </div>
     )
 }

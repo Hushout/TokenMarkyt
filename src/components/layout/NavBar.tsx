@@ -27,7 +27,7 @@ const NavBar: FC = () => {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <div className='fixed flex justify-between items-center w-screen px-4 h-auto bg-black' >
+        <div className='fixed z-50 flex justify-between items-center w-screen px-4 h-auto bg-black' >
             <div className='mx-auto lg:ml-8'>
                 <TransitionLink href='/' useHover={false} ><BrandLogo /></TransitionLink>
             </div>

@@ -1,4 +1,4 @@
-import CardsShowcase from '@/components/pages/CardsShowcase';
+import CardsShowcase from '@/components/pages/homePage/CardsShowcase';
 import React, { FC } from 'react'
 
 const HomePage: FC = () => {

@@ -1,7 +1,6 @@
 "use client"
 import React, { FC, useEffect, useState } from 'react';
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
-import { log } from 'console';
 
 interface Crypto {
     name: string;

@@ -7,6 +7,7 @@ import { SiMarketo } from "react-icons/si"
 import { GiWallet } from "react-icons/gi"
 import { FcAbout } from "react-icons/fc"
 import TransitionLink from './TransitionLink'
+import UserProfile from './UserProfile'
 
 const NavBar: FC = () => {
     const pages: { name: string; path: string; icon: IconType }[] = [
@@ -35,7 +36,8 @@ const NavBar: FC = () => {
                 <FaBars className='cursor-pointer lg:hidden' fill='white' onClick={() => {
                     setShowMenu(!showMenu);
                 }} />
-                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-[102px] lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+47px)]" : "translate-x-full"} lg:translate-x-0`}>
+                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-[102px] lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+47px)]" : "translate-x-full"} lg:translate-x-0 items-center`}>
+                    <UserProfile />
                     {navLinks}
                 </nav>
             </div>

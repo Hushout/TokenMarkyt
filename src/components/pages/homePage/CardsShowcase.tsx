@@ -1,31 +1,16 @@
 "use client"
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
-import { log } from 'console';
-
-interface Crypto {
+export interface Crypto {
     name: string;
     image: string;
     current_price: number;
-  }
+}
 
-const CardsShowcase: FC = () => {
-    const [cryptoList, setCryptoList] = useState<Crypto[]>([]);
+const CardsShowcase: FC<{ cryptoList?: Crypto[], isLoading?: Boolean, isError?: Boolean }> = ({ cryptoList, isLoading, isError }) => {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('/api/cryptos');
-                const data = await response.json();
-                if(data.length > 0){
-                    setCryptoList(data);
-                }
-            } catch (error) {
-                console.error('Error fetching cryptocurrency data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+    if (isLoading) return <div>Loading...</div>;
+    if (isError || !cryptoList) return <div>Error fetching data</div>;
 
     return (
         <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">

@@ -19,9 +19,8 @@ interface ProvidersProps {
   children: React.ReactNode;
 }
 
-const queryClient = new QueryClient();
-
 const Providers: FC<ProvidersProps> = ({ children }) => {
+  const [queryClient] = React.useState(() => new QueryClient());
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>

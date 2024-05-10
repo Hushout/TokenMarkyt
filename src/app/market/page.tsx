@@ -33,10 +33,10 @@ const MarketPage: FC = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center p-5 lg:p-20 mt-20'>
+    <div className='flex flex-col items-center justify-center p-20 mt-10 max-h-[100vh]'>
       <Input
         classNames={{
-          base: "max-w-full sm:max-w-[400px] h-10",
+          base: "max-w-full sm:max-w-[400px] h-10 mb-5",
           mainWrapper: "h-full",
           input: "text-small",
           inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",

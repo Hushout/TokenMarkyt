@@ -13,7 +13,7 @@ const CardsShowcase: FC<{ cryptoList?: Crypto[], isLoading?: Boolean, isError?: 
     if (isError || !cryptoList) return <div>Error fetching data</div>;
 
     return (
-        <div className="gap-2 grid grid-cols-2 sm:grid-cols-4 m-6">
+        <div className="gap-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 max-h-[70vh] overflow-y-scroll">
             {cryptoList.map((item, index) => (
                 <Card shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
                     <CardBody className="overflow-visible p-0">

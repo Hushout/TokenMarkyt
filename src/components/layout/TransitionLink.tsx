@@ -20,7 +20,7 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, children, useHover = tr
     }
 
     return (
-        <button className={`text-white font-bold px-8 py-4 hover:text-black ${useHover ? "bg-black hover:bg-white" : ""} flex items-center justify-center`}
+        <button className={`w-[170px] text-white font-bold px-8 py-4 hover:text-black ${useHover ? "bg-black hover:bg-white" : ""} flex items-center justify-center`}
             onClick={handleClick}>
             {children}
         </button>

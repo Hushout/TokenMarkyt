@@ -36,7 +36,7 @@ const NavBar: FC = () => {
                 <FaBars className='cursor-pointer lg:hidden' fill='white' onClick={() => {
                     setShowMenu(!showMenu);
                 }} />
-                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-[102px] lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+47px)]" : "translate-x-full"} lg:translate-x-0 items-center`}>
+                <nav role="navigation" className={`transition-transform duration-500 ease-in-out fixed lg:relative flex flex-col lg:flex-row top-[102px] lg:top-auto transform lg:transform-none ${showMenu ? "translate-x-[calc(-100%+32px)]" : "translate-x-full"} lg:translate-x-0 items-center justify-center`}>
                     <UserProfile />
                     {navLinks}
                 </nav>

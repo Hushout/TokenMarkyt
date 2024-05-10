@@ -1,17 +1,17 @@
 'use client'
 import React, { FC } from 'react'
 import { useQuery } from "@tanstack/react-query";
-import CardsShowcase,{Crypto} from '@/components/pages/homePage/CardsShowcase';
+import CardsShowcase, { Crypto } from '@/components/pages/homePage/CardsShowcase';
 
-const fetchCrypto = async () => {
-  const response = await fetch('/api/cryptos');
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  return response.json();
-}
 
 const HomePage: FC = () => {
+  const fetchCrypto = async () => {
+    const response = await fetch('/api/cryptos');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }    
+    return response.json();
+  }
   const { data: cryptoList, isPending, isError } = useQuery<Crypto[]>({
     queryKey: ['fetchCrypto'],
     queryFn: fetchCrypto,
